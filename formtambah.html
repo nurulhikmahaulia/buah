@@ -35,6 +35,28 @@
      <button class="btn btn-primary" id="tombolsimpan">simpan</button>
   </form>
   
+  
+    
+  <script type="module">
+    import { tambahBuah } from "./main.js";
+    
+    $(document).ready(async function() {
+      // ambil data dari formulir
+      
+      // ketika tombol tambah di pencet
+      $("#tombolsimpan").click(async function(event) {
+        event.preventDefault()
+        
+        let nama = $("#inputnama").val()
+      let warna = $("#inputwarna").val()
+      let harga = $("#inputharga").val()
+      
+        
+        await tambahBuah(nama, warna, harga)
+        window.location.href ="index.html"
+      })
+   })
+  </script>
 </body>
 
 </html>
