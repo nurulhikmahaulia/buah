@@ -30,7 +30,7 @@
       <a href="formtambah.html">Tambah Buah</a>
       
       <script type="module">
-        import { ambilDaftarBuah } from './main.js';
+        import { ambilDaftarBuah, hapusBuah } from './main.js';
         
         $(document).ready(async function() {
           let elemenDaftarBuah = $("#daftar-buah > tbody");
@@ -48,6 +48,12 @@
               "</tr>"
               )
           })
+          
+           $('.tombol-hapus').click(async function() {
+            await hapusBuah($(this). attr('data'))
+            location.reload() 
+          })
+          
           
           
           })
