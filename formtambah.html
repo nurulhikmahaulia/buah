@@ -43,10 +43,14 @@
     $(document).ready(async function() {
       // ambil data dari formulir
       
+      
       // ketika tombol tambah di pencet
       $("#tombolsimpan").click(async function(event) {
         event.preventDefault()
         
+        
+        // membuat tombol ini jadi disabled
+        $(this).attr('disabled', 'disabled')
         let nama = $("#inputnama").val()
       let warna = $("#inputwarna").val()
       let harga = $("#inputharga").val()
