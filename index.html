@@ -36,10 +36,12 @@
           let elemenDaftarBuah = $("#daftar-buah > tbody");
           let daftarBuah = await ambilDaftarBuah();
           
+          
+          let nomor = 1
           daftarBuah.forEach((data) => {
             elemenDaftarBuah.append(
               "<tr>" +
-               "<td>" + "</td>" +
+               "<td>" +  nomor + "</td>" +
                "<td>" + data.nama + "</td>" +
                "<td>" + data.warna + "</td>" +
                "<td>" + data.harga + "</td>" +
@@ -47,6 +49,7 @@
                "<td>" + "<a href='#' class='me-2 link-ubah' data='" + data.id + "'>ubah</a><button class='btn btn-danger tombol-hapus' data='" +data.id + "'>hapus</button> "  + "</td>" +
               "</tr>"
               )
+              nomor = nomor + 1
           })
           
            $('.tombol-hapus').click(async function() {
